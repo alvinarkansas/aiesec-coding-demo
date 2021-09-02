@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  @apply gap-4;
+  padding: 32px 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.merchant-card h6 {
+  @apply text-xl font-extrabold;
+  @apply mb-4;
+  line-height: 1.33;
+}
+.thumbnail-wrapper {
+  @apply h-36;
+  @apply relative;
+}
+.thumbnail-wrapper img {
+  @apply w-full h-full;
+  @apply rounded-lg;
+  @apply object-cover;
+}
+.merchant-description {
+  @apply mt-3;
+  @apply w-full;
+  @apply relative;
+  word-wrap: break-word;
+  min-height: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.promo-tag {
+  @apply absolute top-2 -left-1;
+  @apply p-1;
+  @apply text-white text-xs font-bold;
+  background: #00b14f;
+}
+.tag-tail {
+  border-style: solid;
+  border-width: 0 4px 4px 0;
+  border-color: transparent #008c3f transparent transparent;
+  @apply absolute top-6 left-0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 640px) {
+  .grid-container {
+    padding: 64px 12.5vw;
   }
 }
